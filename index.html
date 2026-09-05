@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--
+  ^ This line MUST be the very first line in any HTML file.
+  It tells the browser "use modern HTML rules" (HTML5).
+  Without it, old browsers might render your page weirdly.
+-->
+<html lang="en">
+<!--
+  <html> wraps the ENTIRE page. Everything you see or don't see lives inside it.
+  lang="en" tells screen readers and search engines the page is in English.
+-->
+
+<head>
+  <!--
+    <head> holds information ABOUT the page — nothing here is visible
+    on the page itself. Think of it as the page's "ID card."
+  -->
+  <meta charset="UTF-8">
+  <!-- Tells the browser to use standard character encoding so text/emojis display correctly -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Important for Level 5 (responsive design) — makes the page scale correctly on phones -->
+
+  <title>EventGo | Book Tickets for Movies, Concerts & Sports</title>
+  <!-- This text shows up in the browser TAB, not on the page -->
+
+  <link rel="stylesheet" href="style.css">
+  <!--
+    This line CONNECTS our HTML to our CSS file.
+    rel="stylesheet" tells the browser "this file contains styling rules"
+    href="style.css" points to the file (must be in the SAME folder as this HTML file)
+  -->
+</head>
+
+<body>
+  <!--
+    <body> holds EVERYTHING visible on the page.
+    Everything below this point is what a visitor actually sees.
+  -->
+
+  <!-- ============ HEADER SECTION ============ -->
+  <header>
+    <!--
+      <header> = the top banner of the page.
+      Usually contains the site name/logo and navigation.
+    -->
+    <h1>EventGo</h1>
+    <!-- <h1> = the MAIN heading of the page. Use only ONE <h1> per page. -->
+
+    <nav>
+      <!-- <nav> = a container built specifically for navigation links -->
+      <ul>
+        <!-- <ul> = "unordered list" — a bullet-point style list container -->
+        <li><a href="#home">Home</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#booking">Booking</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <!--
+          <li> = "list item" — one entry in the list
+          <a href="#events"> = a clickable link that jumps to the section
+          with id="events" on THIS same page (a "hash link")
+        -->
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ============ INTRO SECTION ============ -->
+  <section id="home">
+    <!--
+      <section> = a distinct chunk of related content.
+      The id="home" lets our nav link "Home" jump here.
+    -->
+    <h2>Welcome to EventGo</h2>
+    <p>
+      EventGo helps you discover and book tickets for movies, concerts,
+      and sports events near you — fast, simple, and hassle-free.
+    </p>
+  </section>
+
+  <!-- ============ EVENT LISTING SECTION ============ -->
+  <section id="events">
+    <h2>Upcoming Events</h2>
+
+    <div class="event-list">
+      <!--
+        class="event-list" is a CONTAINER for all the cards.
+        We'll use CSS Flexbox on this to line cards up in a row.
+      -->
+
+      <div class="event-card" data-event="Coldplay: Music of the Spheres">
+        <!--
+          data-event="..." is a CUSTOM ATTRIBUTE — HTML lets you invent
+          your own attributes starting with "data-". JavaScript can read
+          this later to know WHICH event a button belongs to.
+        -->
+        <div class="event-icon">🎤</div>
+        <!--
+          We're using an emoji as a lightweight "icon" — no image file needed.
+          In a real production app, you'd usually replace this with an
+          <img src="..."> tag pointing to an actual photo.
+        -->
+        <h3>Coldplay: Music of the Spheres</h3>
+        <p class="event-date">15 Oct 2026</p>
+        <p class="event-location">DY Patil Stadium, Mumbai</p>
+        <p class="event-price">₹4,500 onwards</p>
+        <button class="book-btn">Book Ticket</button>
+        <!--
+          <button> = a clickable UI element. Level 3 left it doing nothing —
+          now in Level 4, script.js will make it actually respond to clicks.
+        -->
+      </div>
+
+      <div class="event-card" data-event="Avengers: Legacy">
+        <div class="event-icon">🎬</div>
+        <h3>Avengers: Legacy</h3>
+        <p class="event-date">02 Nov 2026</p>
+        <p class="event-location">PVR Cinemas, Andheri</p>
+        <p class="event-price">₹350 onwards</p>
+        <button class="book-btn">Book Ticket</button>
+      </div>
+
+      <div class="event-card" data-event="India vs Australia — ODI">
+        <div class="event-icon">🏏</div>
+        <h3>India vs Australia — ODI</h3>
+        <p class="event-date">20 Nov 2026</p>
+        <p class="event-location">Wankhede Stadium, Mumbai</p>
+        <p class="event-price">₹1,200 onwards</p>
+        <button class="book-btn">Book Ticket</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EVENT DETAILS SECTION ============ -->
+  <section id="event-details">
+    <h2>Event Details</h2>
+
+    <button id="toggle-details-btn">Hide Details</button>
+    <!--
+      Task 2: this button will show/hide the box below when clicked.
+      Its starting text is "Hide Details" because the box starts VISIBLE.
+    -->
+
+    <div class="details-box" id="details-box">
+      <h3>Coldplay: Music of the Spheres</h3>
+      <p><strong>Venue:</strong> DY Patil Stadium, Mumbai</p>
+      <p><strong>Time:</strong> 7:00 PM onwards</p>
+      <p><strong>Ticket Price:</strong> ₹4,500 – ₹15,000 (depending on seating category)</p>
+    </div>
+  </section>
+
+  <!-- ============ BOOKING SECTION ============ -->
+  <section id="booking">
+    <h2>Book Your Tickets</h2>
+
+    <form id="booking-form">
+      <!--
+        <form> groups related inputs together and lets us catch
+        a single "submit" action (e.g. pressing a Submit button).
+      -->
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <!--
+          <label for="name"> links this label to the input with id="name".
+          Clicking the label text will focus that input — good accessibility.
+        -->
+        <input type="text" id="name" name="name" placeholder="e.g. Priya Sharma" required>
+        <!--
+          required = HTML's BUILT-IN validation. The browser won't let the
+          form submit if this is empty. We'll ALSO add our own JS check,
+          because "required" alone doesn't let us show a custom message.
+        -->
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="e.g. priya@example.com" required>
+        <!-- type="email" makes the browser check for a valid email PATTERN (has an @, etc.) -->
+      </div>
+
+      <div class="form-group">
+        <label for="event-select">Select Event</label>
+        <select id="event-select" name="event" required>
+          <!-- <select> = a dropdown menu. Each <option> is one choice. -->
+          <option value="">-- Choose an event --</option>
+          <option value="Coldplay: Music of the Spheres">Coldplay: Music of the Spheres</option>
+          <option value="Avengers: Legacy">Avengers: Legacy</option>
+          <option value="India vs Australia — ODI">India vs Australia — ODI</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="ticket-count">Number of Tickets</label>
+        <input type="number" id="ticket-count" name="ticketCount" min="1" max="10" value="1" required>
+        <!-- type="number" + min/max restricts input to a sensible range -->
+      </div>
+
+      <button type="submit" class="submit-btn">Confirm Booking</button>
+      <!-- type="submit" triggers the form's "submit" event when clicked -->
+
+      <p id="form-message"></p>
+      <!-- Empty for now — script.js will fill this with success/error text -->
+    </form>
+  </section>
+
+  <!-- ============ FOOTER SECTION ============ -->
+  <footer id="contact">
+    <!--
+      <footer> = the bottom strip of the page.
+      Usually holds contact info, copyright, social links.
+    -->
+    <p>&copy; 2026 EventGo. All rights reserved.</p>
+    <p>Contact us: support@eventgo.com</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <!--
+    This loads our JavaScript file. It's placed at the END of <body>
+    (not in <head>) so the browser finishes building the page's HTML
+    FIRST, before JS tries to grab elements from it — otherwise JS
+    might try to find a button that doesn't exist in the page yet.
+  -->
+
+</body>
+</html>

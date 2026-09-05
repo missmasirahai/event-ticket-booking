@@ -1,0 +1,351 @@
+/* ============================================
+   LEVEL 2: STYLING & VISUAL DESIGN
+   ============================================
+   This file controls how the HTML page LOOKS.
+   Each rule below follows this pattern:
+
+   selector {
+     property: value;
+   }
+
+   "selector" = WHICH element to style
+   "property" = WHAT to change (color, size, spacing...)
+   "value"    = the actual setting
+*/
+
+/* ---------- Task 1: Global font, text color, background ---------- */
+
+* {
+  /* The "*" (universal selector) applies to EVERY element on the page */
+  box-sizing: border-box;
+  /*
+    This changes how padding/borders are measured — without this,
+    padding makes elements grow BIGGER than the width you set,
+    which confuses almost every CSS beginner. This line fixes that.
+  */
+  margin: 0;
+  padding: 0;
+  /* Browsers add default spacing to elements — we reset it to zero,
+     so we can control spacing ourselves on purpose. */
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  /* First choice: Segoe UI (looks clean on Windows). Falls back to Arial, then any sans-serif. */
+  color: #222222;
+  /* Dark grey text — softer on the eyes than pure black (#000000) */
+  background-color: #f7f7fb;
+  /* A very light lavender-grey background for the whole page */
+  line-height: 1.6;
+  /* Space between lines of text — improves readability */
+}
+
+/* ---------- Task 4: Style the navigation bar ---------- */
+
+header {
+  background-color: #1e1e2f;
+  /* Dark navy background for the header */
+  color: white;
+  padding: 20px 40px;
+  /* 20px top/bottom, 40px left/right — gives the header breathing room */
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style: none;
+  /* Removes the default bullet points from the <ul> */
+  display: flex;
+  /* Flexbox: lines up the <li> items in a ROW instead of stacked vertically */
+  gap: 25px;
+  /* Space between each nav link */
+}
+
+nav a {
+  color: #f7f7fb;
+  text-decoration: none;
+  /* Removes the default underline from links */
+  font-weight: 500;
+  transition: color 0.2s ease;
+  /* Smoothly animates the color change on hover, instead of an instant snap */
+}
+
+nav a:hover {
+  color: #ffb703;
+  /* Links turn amber/gold when the user hovers their mouse over them */
+}
+
+/* ---------- Task 2: Spacing and layout for sections ---------- */
+
+section {
+  padding: 50px 40px;
+  /* Generous spacing so content doesn't feel cramped against the edges */
+  max-width: 1000px;
+  margin: 0 auto;
+  /* "margin: 0 auto" centers the section horizontally on wide screens */
+}
+
+section h2 {
+  margin-bottom: 15px;
+  color: #1e1e2f;
+}
+
+/* ---------- Task 3: Event card design ---------- */
+
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* wrap = if cards don't fit in one row, they move to the next row */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.event-card {
+  background-color: white;
+  border-radius: 10px;
+  /* Rounded corners */
+  padding: 20px;
+  width: 260px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  /* A soft shadow to lift the card visually off the background */
+  transition: transform 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  /* Card lifts up slightly when hovered — a small polish touch */
+}
+
+.event-card h3 {
+  color: #1e1e2f;
+  margin-bottom: 8px;
+}
+
+.event-date {
+  color: #ffb703;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.event-location {
+  color: #555555;
+  font-size: 0.95rem;
+}
+
+/* ---------- Level 3: icon, price, and button inside each card ---------- */
+
+.event-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  /* Big emoji "icon" sitting at the top of the card */
+}
+
+.event-price {
+  color: #1e1e2f;
+  font-weight: 600;
+  margin: 8px 0 14px 0;
+}
+
+.book-btn {
+  background-color: #ffb703;
+  color: #1e1e2f;
+  border: none;
+  /* Removes the default grey border browsers put on buttons */
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  /* Changes the mouse cursor to a "hand" pointer on hover, signaling it's clickable */
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.book-btn:hover {
+  background-color: #fb8500;
+  /* Slightly darker amber on hover — gives feedback that the button is interactive */
+}
+
+.book-btn.selected {
+  /*
+    This class gets ADDED by JavaScript when a user clicks the button.
+    It's not used anywhere in the HTML directly — JS attaches it dynamically.
+  */
+  background-color: #2a9d3f;
+  color: white;
+}
+
+/* ---------- Level 3: Event Details section ---------- */
+
+.details-box {
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+}
+
+.details-box p {
+  margin-bottom: 8px;
+}
+
+/* ---------- Level 4: Toggle button + Booking form ---------- */
+
+#toggle-details-btn {
+  background-color: #1e1e2f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  /* Stacks the label above the input, instead of side by side */
+  max-width: 400px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #1e1e2f;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  /* Makes the input use the SAME font as the rest of the page,
+     instead of the browser's default plain font */
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #ffb703;
+  /* Highlights the field in amber when the user clicks into it */
+}
+
+.submit-btn {
+  background-color: #ffb703;
+  color: #1e1e2f;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #fb8500;
+}
+
+#form-message {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.form-message-success {
+  color: #2a9d3f;
+  /* Green for success messages */
+}
+
+.form-message-error {
+  color: #d62828;
+  /* Red for error messages */
+}
+
+/* ---------- Task 4: Style the footer consistently ---------- */
+
+footer {
+  background-color: #1e1e2f;
+  color: #cccccc;
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+/* ============================================
+   LEVEL 5: RESPONSIVE DESIGN & FINAL TOUCHES
+   ============================================
+   Everything above this point is our "desktop" design.
+   The rules below OVERRIDE some of those properties, but
+   ONLY when the browser window is narrower than the given width.
+
+   We're going from bigger breakpoints to smaller ones:
+   768px  = roughly tablet size
+   480px  = roughly phone size
+*/
+
+/* ---------- Tablet screens (768px and narrower) ---------- */
+
+@media (max-width: 768px) {
+
+  header {
+    padding: 15px 20px;
+    /* Less side padding — small screens need every pixel of width */
+  }
+
+  nav ul {
+    flex-direction: column;
+    /* Stacks nav links VERTICALLY instead of in a row —
+       a horizontal row of 4 links won't fit on a narrow screen */
+    gap: 12px;
+  }
+
+  section {
+    padding: 30px 20px;
+    /* Reduced from 50px/40px on desktop — tighter spacing for small screens */
+  }
+
+  .event-list {
+    flex-direction: column;
+    /* Stacks event cards in a single column instead of 3-across */
+    align-items: center;
+  }
+
+  .event-card {
+    width: 100%;
+    max-width: 350px;
+    /* Cards grow to fill available width, capped so they don't look
+       stretched on a tablet-sized screen */
+  }
+}
+
+/* ---------- Phone screens (480px and narrower) ---------- */
+
+@media (max-width: 480px) {
+
+  header h1 {
+    font-size: 1.5rem;
+    /* Smaller heading text — the default size can look oversized on a phone */
+  }
+
+  section h2 {
+    font-size: 1.3rem;
+  }
+
+  .form-group {
+    max-width: 100%;
+    /* Form fields stretch to fill the full (narrow) phone width */
+  }
+
+  .details-box {
+    max-width: 100%;
+  }
+
+  .submit-btn,
+  .book-btn {
+    width: 100%;
+    /* Full-width buttons are easier to tap accurately on a touchscreen */
+  }
+}

@@ -5,13 +5,13 @@
 
 A responsive, interactive front-end web app for browsing and booking tickets to movies, concerts, and sports events — built from scratch with vanilla HTML, CSS, and JavaScript. No frameworks, no build tools, no dependencies.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen?style=for-the-badge)](https://6a9c73db3e84f61f53f818a8--tangerine-selkie-6ac36f.netlify.app/)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen?style=for-the-badge)](https://tangerine-selkie-6ac36f.netlify.app/)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 
-**[🔗 View Live Demo](https://6a9c73db3e84f61f53f818a8--tangerine-selkie-6ac36f.netlify.app/)**
+**[🔗 View Live Demo](https://tangerine-selkie-6ac36f.netlify.app/)**
 
 </div>
 
@@ -110,6 +110,14 @@ B.Sc. IT Student
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/missmasirahai)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/masirah-saudagar-2980a93a1)
+
+---
+
+<div align="center">
+
+⭐ If you found this project useful or interesting, consider giving it a star!
+
+</div>
 
 ---
 

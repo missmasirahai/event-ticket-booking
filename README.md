@@ -118,11 +118,3 @@ B.Sc. IT Student
 ⭐ If you found this project useful or interesting, consider giving it a star!
 
 </div>
-
----
-
-<div align="center">
-
-⭐ If you found this project useful or interesting, consider giving it a star!
-
-</div>
